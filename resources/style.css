@@ -4,7 +4,8 @@
 }
 
 :root{
-    --gallery-columns: 4;
+    --gallery-columns: 2;
+    --primary-color: dodgerblue;
 }
 header{
     display: flex;
@@ -12,7 +13,7 @@ header{
     background-color: black;
     color: white;
     margin: 0 0 10px;
-    border-bottom: 5px solid grey;
+    border-bottom: 2px solid grey;
 }
 
 header .container{
@@ -34,7 +35,7 @@ header .container a{
     color: white;
 }
 
-#logo img{
+/* #logo img{
     max-width: 80px;
     border-radius: 50%;
     margin: 20px;
@@ -43,45 +44,76 @@ header .container a{
 #logo{
     display: inline-flex;
     align-items: center;
+} */
+
+#logoTitle{
+    display: inline-flex;
+    align-items: center;
+    svg{
+        height: 80px;
+        width: 80px;
+        margin: 20px;
+    }
+}
+
+svg path{
+    fill: var(--primary-color)
+}
+
+
+
+#logo{
+    background-color: var(--primary-color);
+    width: 100px;
+    height: 100px;
+    font-weight: bold;
 }
 
 .nav.current-page{
-    background-color:dodgerblue;
+    background-color: var(--primary-color);
     border-radius: 10px;
     margin: 10px;
 }
 
-.other-page{
-    &:hover{
-        a{
-            color: grey;
-        }
+.other-page a{
+    transition: 0.5s;
+}
+
+.other-page:hover{
+    a{
+        transition: 0s;
+        color: grey;
     }
 }
 
 main{
-    margin: auto;
+    display: flex;
+    margin: 120px auto;
     max-width: 1400px;
 }
 
 .description{
     margin: 50px auto;
-    text-align: center;
-    font-weight: bold;
+}
+
+.interactive{
+    width: 200px;
+    height: 200px;
+    background-color: darkgrey;
 }
 
 .gallery{
     display: flex;
     flex-flow: wrap;
     justify-content: center;
-    max-width: 1400px;
+    max-width: 50%;
     gap: 10px;
 }
 
 .gallery-item{
-    flex-basis: calc(100% / var(--gallery-columns));
+    flex-basis: 40%;
     img{
-        aspect-ratio: 3 /2;
+        aspect-ratio: 3 / 2;
         object-fit: cover;
         border-radius: 10px;
     }
@@ -101,6 +133,42 @@ footer{
         margin: 20px;
         float: left;
     }
+}
+
+.color-swatch{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border-radius: 50%;
+
+    &:hover{
+        border: 1px solid grey;
+    }
+}
+
+.red{
+    background-color: crimson;
+}
+
+.orange{
+    background-color: orangered;
+}
+
+.yellow{
+    background-color: gold;
+}
+
+.green{
+    background-color: limegreen;
+}
+
+.blue{
+    background-color: dodgerblue;
+}
+
+.violet{
+    background-color: blueviolet;
 }
 
 @media only screen and (width < 800px){
