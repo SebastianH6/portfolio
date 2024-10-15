@@ -5,21 +5,59 @@
 
 :root{
     --gallery-columns: 2;
-    --background-color: #101014;
     --primary-color: dodgerblue;
-    --font-color: white;
-    background-color: var(--background-color);
-    color: var(--font-color);
     scroll-behavior: smooth;
+
+    background-color: var(--background-color);
+    color: var(--font-color)
 }
+
+[data-theme="dark"]{
+    --background-color: #101014;
+    --font-color: white; 
+    --button-hover: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="light"]{
+    --background-color: white;
+    --font-color: #101014;
+    --button-hover: rgba(0, 0, 0, 0.2);
+}
+
 header{
     position: sticky;
     top: 0;
     display: flex;
     justify-content: center;
-    color: white;
+    color: var(--font-color);
     background-color: var(--background-color);
     border-bottom: 1px solid grey;
+}
+
+.header-right{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.header-right svg{
+    width: 2rem;
+    height: auto;
+    padding: 10px;
+    transition: 0.25s;
+    path{
+        fill: var(--font-color);
+    }
+    circle{
+        stroke: var(--font-color);
+        stroke-width: 15px;
+        r: 60px;
+    }
+
+    &:hover{
+        background-color: var(--button-hover);
+        border-radius: 10px;
+    }
 }
 
 /* h1 span{
@@ -48,17 +86,20 @@ header .container{
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    padding: 0;
 }
 
 header .container li{
     display: inline;
-    padding: 10px 15px;
+    padding: 0;
+    height: 100%;
+    margin: 20px 15px;
     font-size: 1.2rem;
 }
 
 header .container a{
     text-decoration: none;
-    color: white;
+    color: var(--font-color);
 }
 
 .container{
@@ -112,6 +153,7 @@ h2{
 #logo{
     display: inline-flex;
     align-items: center;
+    padding: 20px;
     svg{
         width: 50px;
         height: auto;
@@ -137,6 +179,8 @@ svg path{
 }
 
 .other-page{
+    padding: 0;
+    margin: 20px auto;
     a{
         transition: 0.5s
     }
