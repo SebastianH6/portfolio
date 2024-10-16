@@ -26,6 +26,7 @@
 
 header{
     position: sticky;
+    z-index: 2;
     top: 0;
     display: flex;
     justify-content: center;
@@ -111,7 +112,7 @@ header .container a{
 }
 
 .about-item{
-    background-color: grey;
+    background-color: hsl(240 6% 25%);
     border-radius: 5px;
     padding: 8px;
 }
@@ -221,6 +222,7 @@ main{
 }
 
 .gallery-item{
+    position: relative;
     aspect-ratio: 3 / 2;
     overflow: hidden;
     img{
@@ -230,6 +232,37 @@ main{
         border-radius: 20px;
     }
 }
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    height: 30%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #000000b3;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0));
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+
+  .gallery-item:hover{
+    .overlay{
+        opacity: 1;
+    }
+  }
+
+  .text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
 
 a.anchor{
     display: block;
