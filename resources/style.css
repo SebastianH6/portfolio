@@ -113,6 +113,7 @@ header .container a{
 
 .about-item{
     background-color: hsl(240 6% 25%);
+    color: white;
     border-radius: 5px;
     padding: 8px;
 }
@@ -120,7 +121,7 @@ header .container a{
 h2{
     margin: 25px 0;
     padding-bottom: 10px;
-    max-width: 15%;
+    max-width: 33%;
     border-bottom: 1px solid var(--primary-color);
 }
 
@@ -128,7 +129,7 @@ h2{
     background-color: rgb(32, 32, 36);
     border-radius: 15px;
     padding: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 
     h1{
         margin: 10px 20px 20px;
@@ -210,13 +211,71 @@ main{
     margin: 100px;
 }
 
+.lightbox{
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content{
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.close{
+    transition: 0.25s;
+    &:hover{
+        transform: scale(1.5);
+    }
+}
+
+.arrow{
+    position: absolute;
+    top: 50%;
+    /* transform: translateY(-50%); */
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    z-index: 3;
+    transition: 0.25s;
+
+    &:hover{
+        transform: scale(1.5);
+    }
+}
+
+.left{
+    left: 40px;
+}
+
+.right{
+    right: 40px;
+}
+
+.close{
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
 .gallery{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
     max-width: 100%;
     max-height: 66%;
-    gap: 20px;
+    gap: 40px;
     margin-bottom: 20px;
 }
 
@@ -225,6 +284,8 @@ main{
     aspect-ratio: 3 / 2;
     overflow: hidden;
     transition: .25s;
+    cursor: pointer;
+    user-select: none;
     img{
         width: 100%;
         height: 100%;
@@ -279,8 +340,12 @@ a.anchor{
 
 footer{
     margin: 20px auto 0;
-    border-top: 2px solid grey;
-    max-width: 1400px;
+    border-top: 2px solid var(--primary-color);
+
+    .container{
+        background-color: transparent;
+        justify-content: space-between;
+    }
 
     p{
         margin: 20px;
@@ -289,14 +354,16 @@ footer{
 }
 
 .color-swatch{
+    box-sizing: border-box;
     display: inline-block;
     width: 50px;
     height: 50px;
+    margin: 2px;
     background-color: red;
     border-radius: 50%;
 
     &:hover{
-        border: 1px solid grey;
+        border: 3px solid var(--font-color);
     }
 }
 

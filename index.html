@@ -23,7 +23,6 @@
                         <ul>
                             <li class="other-page"><a href="#gallery-anchor">Portfolio</a></li>
                             <li class="other-page"><a href="#programs">About</a></li>
-                            <li class="other-page"><a href="#">Contact</a></li>
                         </ul>
                     </nav>
                     <a role="button" id="theme-toggle">
@@ -42,30 +41,100 @@
         </header>
         <main>
             <div class="intro">
-                <h1>Web developer<br>and<br>3d Artist</h1>
+                <h1>3d Artist and Web Developer</h1>
                 <p>Whether you're here for 3d art or web deveopment, you're in the right place</p>
-                <p>This portfolio website showcases some of my 3d work, and I designed and developed it myself</p>
+                <p>This portfolio website showcases some of my 3d work, and I developed it myself</p>
+            </div>
+            <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+                <span class="close">&times;</span>
+                <img class="lightbox-content" id="expandedImg">
+                <div class="arrow left" onclick="prevImage(event)">&#10094;</div>
+                <div class="arrow right" onclick="nextImage(event)">&#10095;</div>
             </div>
             <a class="anchor" id="gallery-anchor"></a>
             <div class="gallery">
-                <div class="gallery-item">
-                    <a href="#"><img src="resources/images/orange.png"></a>
-                    <div class="overlay"><div class="text">D20</div></div>
+                <div class="gallery-item" onclick="expandImage(event)">
+                    <img src="resources/images/Starship Scetchfab.jpg">
+                    <div class="overlay"><div class="text">Starfigher</div></div>
                 </div>
-                <div class="gallery-item">
-                    <a href="#"><img src="resources/images/hdri 3 v3.jpg"></a>
-                    <div class="overlay"><div class="text">hdri render</div></div>
+                <div class="gallery-item" onclick="expandImage(event)">
+                    <img src="resources/images/hdri 3 v3.jpg">
+                    <div class="overlay"><div class="text">HDRI Render</div></div>
                 </div>
-                <div class="gallery-item">
-                    <a href="#"><img src="resources/images/shipFront.PNG"></a>
-                    <div class="overlay"><div class="text">unity3d</div></div>
+                <div class="gallery-item" onclick="expandImage(event)">
+                    <img src="resources/images/shipFront.PNG">
+                    <div class="overlay"><div class="text">Unity3d Ship</div></div>
                 </div>
-                <div class="gallery-item">
-                    <a href="#"><img src="resources/images/orange.png"></a>
-                    <div class="overlay"><div class="text">D20</div></div>
+                <div class="gallery-item" onclick="expandImage(event)">
+                    <img src="resources/images/shipBottom.PNG">
+                    <div class="overlay"><div class="text">Unity3d Ship</div></div>
                 </div>
-                <div class="gallery-item">
-                    <a href="#"><img src="resources/images/orange.png"></a>
+                <div class="gallery-item" onclick="expandImage(event)">
+                    <img src="resources/images/458.jpg">
+                    <div class="overlay"><div class="text">Cities: Skylines Mods</div></div>
+                </div>
+                <div class="gallery-item" onclick="expandImage(event)">
+                    <img src="resources/images/NB1.jpg">
+                    <div class="overlay"><div class="text">Cities: Skylines Mods</div></div>
+                </div>
+                <div class="gallery-item" onclick="expandImage(event)">
+                    <img src="resources/images/ND.jpg">
+                    <div class="overlay"><div class="text">Cities: Skylines Mods</div></div>
+                </div>
+                <div class="gallery-item" onclick="expandImage(event)">
+                    <img src="resources/images/RX8.jpg">
+                    <div class="overlay"><div class="text">Cities: Skylines Mods</div></div>
+                </div>
+                <div class="gallery-item" onclick="expandImage(event)">
+                    <img src="resources/images/audiR8GT3.png">
+                    <div class="overlay"><div class="text">Audi GT3</div></div>
+                </div>
+                <div class="gallery-item" onclick="expandImage(event)">
+                    <img src="resources/images/new test render.jpg">
+                    <div class="overlay"><div class="text">Mclaren P1</div></div>
+                </div>
+                <div class="gallery-item" onclick="expandImage(event)">
+                    <img src="resources/images/portfolio_front22.png">
+                    <div class="overlay"><div class="text">Ferrari 458</div></div>
+                </div>
+                <div class="gallery-item" onclick="expandImage(event)">
+                    <img src="resources/images/portfolio_back22.png">
+                    <div class="overlay"><div class="text">Ferrari 458</div></div>
+                </div>
+                <div class="gallery-item" onclick="expandImage(event)">
+                    <img src="resources/images/f-18 wireframe front.jpeg">
+                    <div class="overlay"><div class="text">F/A-18</div></div>
+                </div>
+                <div class="gallery-item" onclick="expandImage(event)">
+                    <img src="resources/images/f-18 wireframe underside.jpeg">
+                    <div class="overlay"><div class="text">F/A-18</div></div>
+                </div>
+                <div class="gallery-item" onclick="expandImage(event)">
+                    <img src="resources/images/f-18 wireframe back.jpeg">
+                    <div class="overlay"><div class="text">F/A-18</div></div>
+                </div>
+                <div class="gallery-item" onclick="expandImage(event)">
+                    <img src="resources/images/Turret Back.jpg">
+                    <div class="overlay"><div class="text">Sci-Fi Turret</div></div>
+                </div>
+                <div class="gallery-item" onclick="expandImage(event)">
+                    <img src="resources/images/3_point_lighting_fix.jpg">
+                    <div class="overlay"><div class="text">Lego Car</div></div>
+                </div>
+                <div class="gallery-item" onclick="expandImage(event)">
+                    <img src="resources/images/legocartest2.png">
+                    <div class="overlay"><div class="text">Lego Car Exploded</div></div>
+                </div>
+                <div class="gallery-item" onclick="expandImage(event)">
+                    <img src="resources/images/Longboard grayscale.jpg">
+                    <div class="overlay"><div class="text">Longboard</div></div>
+                </div>
+                <div class="gallery-item" onclick="expandImage(event)">
+                    <img src="resources/images/captial ship.jpg">
+                    <div class="overlay"><div class="text">Sci-Fi Battleship</div></div>
+                </div>
+                <div class="gallery-item" onclick="expandImage(event)">
+                    <img src="resources/images/orange.png">
                     <div class="overlay"><div class="text">D20</div></div>
                 </div>
             </div>
@@ -86,14 +155,17 @@
                 <div class="about-item"><span>3d Rendering</span></div>
                 <div class="about-item"><span>HTML5</span></div>
                 <div class="about-item"><span>CSS</span></div>
-                <div class="about-item"><span>JS (In progress!)</span></div>
+                <div class="about-item"><span>Javascript and Typescript</span></div>
+                <div class="about-item"><span>C# (For Unity3d)</span></div>
+                <div class="about-item"><span>React (In progress!)</span></div>
                 <div class="about-item"><span>Graphic Design</span></div>
             </div>
         </main>
         <footer>
             <div class="container">
-                <p>I'd put copyright info here</p>
+                <p></p>
                 <div class="color-palette">
+                    <p>try a differnt color!</p>
                     <div class="color-swatch red"></div>
                     <div class="color-swatch orange"></div>
                     <div class="color-swatch yellow"></div>
