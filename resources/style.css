@@ -5,7 +5,7 @@
 }
 
 :root{
-    --gallery-columns: 2;
+    --gallery-columns: 3;
     --primary-color: dodgerblue;
     scroll-behavior: smooth;
 
@@ -105,6 +105,7 @@ header .container a{
 
 .container{
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
     background-color: rgb(32, 32, 36);
     border-radius: 15px;
@@ -238,7 +239,7 @@ main{
 
 .arrow{
     position: absolute;
-    top: 50%;
+    /* top: 50%; */
     /* transform: translateY(-50%); */
     font-size: 2rem;
     color: white;
@@ -271,7 +272,7 @@ main{
 
 .gallery{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(var(--gallery-columns), 1fr);
     grid-template-rows: auto;
     max-width: 100%;
     max-height: 66%;
@@ -391,7 +392,7 @@ footer{
     background-color: blueviolet;
 }
 
-@media only screen and (width < 800px){
+@media only screen and (width < 1000px){
     :root{
         --gallery-columns: 1;
     }
@@ -399,7 +400,32 @@ footer{
     .gallery{
         margin: 10px;
     }
-    * {
-        color: red;
+
+    .arrow{
+        display: none;
     }
+
+    .intro{
+        text-align: center;
+
+        h1{
+            padding-bottom: 25px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        p{
+            font-size: 1.1rem;
+        }
+    }
+
+    h2{
+        max-width: 100%;
+    }
+
+    .about-item{
+        font-size: 2rem;
+        padding: 15px;
+    }
+
+
 }
