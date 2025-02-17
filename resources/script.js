@@ -24,14 +24,33 @@ function expandImage(event){
 
     currentImageIndex = Array.from(event.currentTarget.parentNode.children).indexOf(event.currentTarget);
     loadImages();
+
+    history.pushState({lightboxOpen: true}, '');
+    console.log('Expand Image');
+    console.log(history.state);
 }
+
+
 
 function closeLightbox(){
     const lightbox = document.getElementById('lightbox');
     lightbox.style.display = 'none';
 
     document.body.style.overflow = '';
+
+    history.pushState(null, '');
+
+        console.log('Close Image');
+        console.log(history.state);
 }
+
+window.addEventListener('popstate', function(event){
+    console.log('Event');
+    console.log(event.state);
+    if(event.state && event.state.lightboxOpen){
+        closeLightbox();
+    }
+});
 
 function loadImages(){
     const gridItems = document.querySelectorAll('.gallery-item img');
